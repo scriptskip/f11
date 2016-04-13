@@ -2,6 +2,7 @@
 {
 	background: transparent;
 	border: none;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 	display: none;
 	font-family: Arial;
 	height: 4%;
