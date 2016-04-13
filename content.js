@@ -8,12 +8,19 @@ var f11 = window.document.createElement ('input');
 	{
 		if (event.keyCode == 13)
 		{
-			if (validURL (f11.value))
+			var value = f11.value;
+			if (value.substring (0, 1) == '/')
 			{
-				window.document.location = 'http://' + f11.value;
+				window.document.location = value;
 			} else
 			{
-				window.document.location = 'https://www.google.ru/search?q=' + f11.value;
+				if (validURL (value))
+				{
+					window.document.location = 'http://' + value;
+				} else
+				{
+					window.document.location = 'https://www.google.ru/search?q=' + value;
+				};
 			};
 		};
 	};
