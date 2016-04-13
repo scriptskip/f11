@@ -1,7 +1,7 @@
 .f11
 {
 	background: transparent;
-	border: none;
+	border: none!important;
 	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 	display: none;
 	font-family: Arial;
