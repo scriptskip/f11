@@ -9,23 +9,53 @@ var f11 = window.document.createElement ('input');
 		if (event.keyCode == 13)
 		{
 			var value = f11.value;
-			if (value.substring (0, 1) == '/')
+			var first = value.substring (0, 1);
+			switch (first)
 			{
-				window.document.location = value;
-			} else
-			{
-				if (validURL (value))
-				{
-					window.document.location = 'http://' + value;
-				} else
-				{
-					window.document.location = 'https://www.google.ru/search?q=' + value;
-				};
+				case ' ':
+					var command = value.substring (1, value.length);
+					switch (command)
+					{
+						case 'day':
+							var f11_dark = window.document.getElementById ('f11_dark');
+							if (f11_dark)
+							{
+								f11_dark.parentNode.removeChild (f11_dark);
+							};
+							window.localStorage.f11_dark = false;
+						break;
+
+						case 'night':
+							var f11_dark = window.document.getElementById ('f11_dark');
+							if (f11_dark == undefined)
+							{
+								dark ();
+							};
+							window.localStorage.f11_dark = true;
+						break;
+					};
+				break;
+
+				case '/':
+					window.document.location = value;
+				break;
+
+				default:
+					if (validURL (value))
+					{
+						window.document.location = 'http://' + value;
+					} else
+					{
+						window.document.location = 'https://www.google.ru/search?q=' + value;
+					};
+				break;
 			};
 		};
 	};
 
 window.document.body.appendChild (f11);
+if (window.localStorage.f11_dark) { dark (); };
+
 
 var h = window.innerHeight * 0.9;
 var show = true;
@@ -76,4 +106,13 @@ function findHighestZIndex(elem)
   var template = /^(?:(?:https?|http|ftp):\/\/(?:[a-z0-9_-]{1,32}(?::[a-z0-9_-]{1,32})?@)?)?(?:(?:[a-z0-9-]{1,128}\.)+(?:com|net|org|mil|edu|arpa|ru|gov|biz|info|aero|inc|name|[a-z]{2})|(?!0)(?:(?!0[^.]|255)[0-9]{1,3}\.){3}(?!0|255)[0-9]{1,3})(?:\/[a-z0-9.,_@%&?+=\~\/-]*)?(?:#[^ \'\"&<>]*)?$/i;
   var regex = new RegExp (template);
   return (regex.test(url) ? 1 : 0);
+ };
+
+ function dark ()
+ {
+	var dark = window.document.createElement ('div');
+		dark.className = 'f11_dark';
+		dark.id = 'f11_dark';
+		dark.style.zIndex = findHighestZIndex ('div') - 1;
+	window.document.body.appendChild (dark);
  };
