@@ -3,7 +3,6 @@ Chrome extension. It shows the command line at the bottom of the page ( autohide
 
 ![alt text](demo.png)
 
-
 Commands
 
 "url" - go to url
@@ -12,6 +11,8 @@ Commands
 
 "/word" - get query
 
+
+"" - open "google.com"
 
 " " - reload this page
 
