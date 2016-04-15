@@ -107,7 +107,7 @@ var f11 = window.document.createElement ('input');
 		};
 	};
 
-if (window.localStorage.f11_dark) { dark (); };
+if (window.localStorage.f11_dark == true) { dark (); };
 window.document.body.appendChild (f11);
 reload ();
 
