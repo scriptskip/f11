@@ -26,6 +26,13 @@ var f11 = window.document.createElement ('input');
 						break;
 
 						case 'night':
+							var f11_dark = window.document.getElementById ('f11_dark');
+							if (f11_dark == undefined)
+							{
+								dark ();
+							};
+							window.localStorage.f11_dark = true;
+						break;
 						case 'dark':
 							var f11_dark = window.document.getElementById ('f11_dark');
 							if (f11_dark == undefined)
@@ -107,7 +114,7 @@ var f11 = window.document.createElement ('input');
 		};
 	};
 
-if (window.localStorage.f11_dark == true) { dark (); };
+if (window.localStorage.f11_dark == 'true') { dark (); };
 window.document.body.appendChild (f11);
 reload ();
 
