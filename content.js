@@ -13,8 +13,8 @@ var f11 = window.document.createElement ('input');
 			switch (first)
 			{
 				case ' ':
-					var command = value.substring (1, value.length);
-					switch (command)
+					value = value.substring (1, value.length);
+					switch (value)
 					{
 						case 'day':
 							var f11_dark = window.document.getElementById ('f11_dark');
@@ -32,6 +32,16 @@ var f11 = window.document.createElement ('input');
 								dark ();
 							};
 							window.localStorage.f11_dark = true;
+						break;
+
+						default:
+							if (validURL (value))
+							{
+								window.open('http://' + value);
+							} else
+							{
+								window.document.location.reload ();
+							};
 						break;
 					};
 				break;
@@ -51,6 +61,10 @@ var f11 = window.document.createElement ('input');
 							window.document.location = 'https://translate.google.com/#auto/ru/' + value;
 						};
 					};
+				break;
+
+				case '#':
+					window.close ();
 				break;
 
 				case '/':

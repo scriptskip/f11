@@ -13,11 +13,16 @@ Commands
 "/word" - get query
 
 
+" " - reload this page
+
+" url" - go to url in to new tab
 
 " night" - enable night mode on this site
 
 " day" - disable night mode
 
+
+"#" - close this tab
 
 
 "!url" - proxy via Google Translate
