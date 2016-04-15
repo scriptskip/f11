@@ -74,7 +74,19 @@ var f11 = window.document.createElement ('input');
 				break;
 
 				case '#':
-					window.close ();
+					if (value.length == 1) { window.close (); };
+					value = value.substring (1, value.length);
+					if (validURL (value))
+					{
+						var frame = window.document.createElement ('iframe');
+							frame.className = 'f11_frame';
+							frame.setAttribute('src', 'http://' + value + '/');
+							frame.style.height = '100%';
+							frame.style.width = '50%';
+							frame.style.zIndex = findHighestZIndex ('div');
+						window.document.body.appendChild (frame);
+						window.document.body.className = 'f11_frame_body';
+					};
 				break;
 
 				case '/':

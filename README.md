@@ -27,6 +27,8 @@ Commands
 
 "#" - close this tab
 
+"#URL" - dual tab
+
 
 "!URL" - proxy via Google Translate
 

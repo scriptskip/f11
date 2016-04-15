@@ -3,8 +3,7 @@
 	[{
 		"matches": ["*://*/*"],
 		"css": ["content.css"],
-		"js": ["content.js"],
-		"run_at": "document_idle"
+		"js": ["content.js"]
 	}],
 	"icons":
 	{

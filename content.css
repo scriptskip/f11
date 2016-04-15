@@ -35,3 +35,20 @@
 	top: 0;
 	width: 100%;
 }
+
+.f11_frame
+{
+	border: none;
+	left: 50%;
+	position: fixed;
+	top: 0;
+}
+
+.f11_frame_body
+{
+	height: auto;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 50%;
+}
