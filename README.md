@@ -1,5 +1,5 @@
-# f11
-Chrome extension for fullscreen mode ( f11 ). It show search &amp; adress bar if you put down the cursor below ( autohide and autoshow )
+# F11
+Chrome extension. It shows the command line at the bottom of the page ( autohide and autoshow )
 
 ![alt text](demo.png)
 
