@@ -26,6 +26,7 @@ var f11 = window.document.createElement ('input');
 						break;
 
 						case 'night':
+						case 'dark':
 							var f11_dark = window.document.getElementById ('f11_dark');
 							if (f11_dark == undefined)
 							{
@@ -40,7 +41,16 @@ var f11 = window.document.createElement ('input');
 								window.open('http://' + value);
 							} else
 							{
-								window.document.location.reload ();
+								if (typeof (parseInt(value)) == 'number')
+								{
+									window.localStorage.f11_reload = value;
+									reload ();
+								};
+
+								if (value.length < 1)
+								{
+									window.document.location.reload ();
+								};
 							};
 						break;
 					};
@@ -81,12 +91,13 @@ var f11 = window.document.createElement ('input');
 					};
 				break;
 			};
+			f11.value = "";
 		};
 	};
 
 if (window.localStorage.f11_dark) { dark (); };
 window.document.body.appendChild (f11);
-
+reload ();
 
 var h = window.innerHeight * 0.9;
 var show = true;
@@ -146,4 +157,20 @@ function findHighestZIndex(elem)
 		dark.id = 'f11_dark';
 		dark.style.zIndex = findHighestZIndex ('div') + 1;
 	window.document.body.appendChild (dark);
+ };
+
+ function reload ()
+ {
+ 	if (window.localStorage.f11_reload > 0)
+ 	{
+ 		var timeout = window.localStorage.f11_reload * 1000;
+ 		window.setTimeout
+ 		(
+ 			function ()
+ 			{
+ 				window.document.location.reload ();
+ 			},
+ 			timeout
+ 		);
+ 	};
  };

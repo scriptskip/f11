@@ -5,20 +5,22 @@ Chrome extension. It shows the command line at the bottom of the page ( autohide
 
 Commands
 
-"url" - go to url
+"URL" - go to url
 
-"words" - search on Google
+"WORD" - search on Google
 
-"/word" - get query
+"/WORD" - get query
 
 
 "" - open "google.com"
 
 " " - reload this page
 
-" url" - go to url in to new tab
+" NUMBER" - autoreload page with NUMBER seconds timeout
 
-" night" - enable night mode on this site
+" URL" - go to url in to new tab
+
+" dark" or " night" - enable night mode on this site
 
 " day" - disable night mode
 
@@ -26,6 +28,6 @@ Commands
 "#" - close this tab
 
 
-"!url" - proxy via Google Translate
+"!URL" - proxy via Google Translate
 
-"!rus_words", "!en_words" - auto translate
+"!RUS_WORD", "!EN_WORD" - auto translate
